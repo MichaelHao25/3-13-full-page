@@ -62,13 +62,12 @@
 	</div>
 	<div id="fullpage">
 		<div class="section section-page-1">
-			
 			<div class="slide">
 				<div class="banner pt-menu">
 					<a class="pc-bg hidden-xs visible-sm-block visible-md-block visible-lg-block" style="background-image: url(img/header-banner6.png);">
 					</a>
 					<a href="#" class="visible-xs-block wap-bg">
-						<img src="img/header-banner6.png" alt="">
+						<img src="img/wap.jpg" alt="">
 					</a>
 					<div class="container">
 						<div class="row">
@@ -84,14 +83,13 @@
 						</div>
 					</div>
 				</div>
-				
 			</div>
 			<div class="slide">
 				<div class="banner pt-menu">
 					<a class="pc-bg hidden-xs visible-sm-block visible-md-block visible-lg-block" style="background-image: url(img/header-banner6.png);">
 					</a>
 					<a href="#" class="visible-xs-block wap-bg">
-						<img src="img/header-banner6.png" alt="">
+						<img src="img/wap.jpg" alt="">
 					</a>
 					<div class="container">
 						<div class="row">
@@ -223,10 +221,10 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="control-btn" data-js-tabs=".section-page-3 .tabs-wrap">
-									<a href="#" class="active">国内虚拟主机</a>
-									<a href="#">云服务器</a>
-									<a href="#">云服务器</a>
-									<a href="#">服务托管</a>
+									<a href="javascript:;" class="active">国内虚拟主机</a>
+									<a href="javascript:;">云服务器</a>
+									<a href="javascript:;">云服务器</a>
+									<a href="javascript:;">服务托管</a>
 								</div>
 							</div>
 						</div>
@@ -466,12 +464,12 @@
 					<div class="list">
 						<div class="container">
 							<div class="row">
-								<div class="col-xs-4"><img src="img/good2.png" alt=""><h3>2012年开始把脉互联网，专注精品服务</h3></div>
-								<div class="col-xs-4"><img src="img/good3.png" alt=""><h3>保有量近千万的老牌域名注册服务商</h3></div>
-								<div class="col-xs-4"><img src="img/good4.png" alt=""><h3>国内IDC主机服务领导品牌</h3></div>
-								<div class="col-xs-4"><img src="img/good5.png" alt=""><h3>多机房高速骨干网的云计算平台</h3></div>
-								<div class="col-xs-4"><img src="img/good6.png" alt=""><h3>全方位的域名注册交易金融生态系统</h3></div>
-								<div class="col-xs-4"><img src="img/good7.png" alt=""><h3>专业团队7*24小时服务</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good2.png" alt=""><h3>2012年开始把脉互联网，专注精品服务</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good3.png" alt=""><h3>保有量近千万的老牌域名注册服务商</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good4.png" alt=""><h3>国内IDC主机服务领导品牌</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good5.png" alt=""><h3>多机房高速骨干网的云计算平台</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good6.png" alt=""><h3>全方位的域名注册交易金融生态系统</h3></div>
+								<div class="col-xs-6 col-sm-4"><img src="img/good7.png" alt=""><h3>专业团队7*24小时服务</h3></div>
 							</div>
 						</div>
 					</div>
@@ -665,8 +663,27 @@
 	<script src="js/jquery.fullpage.min.js"></script>
 	<script src="js/swiper-3.3.1.jquery.min.js"></script>
 	<script>
-		$('#fullpage').fullpage();
-
+		$('#fullpage').fullpage({
+			verticalCentered:false,
+			afterRender:function(){
+				if (window.innerWidth<768) {
+					$.fn.fullpage.setFitToSection(false)
+					$.fn.fullpage.setAutoScrolling(false);
+				}else{
+					$.fn.fullpage.setFitToSection(true)
+					$.fn.fullpage.setAutoScrolling(true);
+				}
+			},
+			afterResize:function(){
+				if (window.innerWidth<768) {
+					$.fn.fullpage.setFitToSection(false)
+					$.fn.fullpage.setAutoScrolling(false);
+				}else{
+					$.fn.fullpage.setFitToSection(true)
+					$.fn.fullpage.setAutoScrolling(true);
+				}
+			}
+		});
 		var mySwiper = new Swiper ('.swiper-container', {
 			nextButton: '.swiper-button-next',
 			prevButton: '.swiper-button-prev',

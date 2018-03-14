@@ -82,6 +82,7 @@
 					display inline-block
 					font-size:12px
 					line-height 40px
+					float none
 			
 			@media(max-width 768px)
 				position absolute
@@ -142,6 +143,8 @@
 	padding-top 100px
 	height 100%
 	box-sizing border-box
+	@media(max-width 768px)
+		padding-top 50px
 .pt-table
 	display table
 	table-layout fixed
@@ -161,7 +164,14 @@ a.more
 	color #2086ee
 	text-align center
 	line-height 40px
+	@media(max-width 768px)
+		margin-bottom 25px
 .section-page-1
+	&.fp-completely 
+		.banner
+			.search-area
+				transform translate(0, 0)
+				opacity 1
 	.banner
 		.pc-bg
 			background #182643 center center no-repeat
@@ -181,6 +191,9 @@ a.more
 			left 0
 			right 0
 			padding 10px 0 20px
+			transform translate(100%, 100%)
+			opacity 0
+			transition 1s
 			.tips
 				font-size 12px
 				color #fff
@@ -216,6 +229,10 @@ a.more
 		background-image url('../img/header-banner9.png')
 
 .selection-page-2
+	&.fp-completely
+		.perspective
+			transform translate(0, 0)
+			opacity 1
 	.container
 		position relative
 	.swiper-container
@@ -227,11 +244,34 @@ a.more
 		text-align center	
 		line-height 80px
 		background #39f
+		@media(max-width 768px)
+			font-size 18px
 	.perspective
 		perspective 1000px
+		transform translate(0, 200%)
+		opacity 0
+		transition 1s
 		&:hover
 			.wrap
 				transform rotateY(180deg)
+	.swiper-slide:nth-child(1) .perspective
+		transition 1s
+	.swiper-slide:nth-child(2) .perspective
+		transition 1s 0.5s
+	.swiper-slide:nth-child(3) .perspective
+		transition 1s 1s
+	.swiper-slide:nth-child(4) .perspective
+		transition 1s 1.5s
+	.swiper-slide:nth-child(5) .perspective
+		transition 1s 2s
+	.swiper-slide:nth-child(6) .perspective
+		transition 1s 2.5s
+	.swiper-slide:nth-child(7) .perspective
+		transition 1s 3s
+	.swiper-slide:nth-child(8) .perspective
+		transition 1s 3.5s
+	.swiper-slide:nth-child(9) .perspective
+		transition 1s 4s
 	.wrap
 		position relative
 		width 240px
@@ -300,6 +340,11 @@ a.more
 
 .section-page-3
 	background #f1f4f4
+	&.fp-completely
+		.tabs-wrap
+			.col-xs-6
+				transform translate(0,0)!important
+				opacity 1!important
 	.control-btn
 		text-align center
 		a
@@ -337,6 +382,13 @@ a.more
 					
 	.tabs-wrap
 		padding 20px 0
+		.col-xs-6
+			transition 1s
+			opacity 0
+		.col-xs-6:nth-child(odd)
+			transform translate(100%, -100%)
+		.col-xs-6:nth-child(even)
+			transform translate(-100%, 100%)
 		.wrap
 			background #fff
 			width 100%
@@ -395,6 +447,11 @@ a.more
 
 .section-page-4
 	background url('../img/good1.jpg') center center/cover no-repeat
+	&.fp-completely
+		.list
+			.col-xs-6
+				opacity 1
+				transform scale(1)
 	.list
 		padding-top 60px
 		text-align center
@@ -411,10 +468,40 @@ a.more
 			text-overflow ellipsis
 			overflow hidden
 			width 100%
+		.col-xs-6
+			opacity 0
+			transform scale(0)
+			transition 1s;
+			&:nth-child(1)
+				transition 1s 0.5*0s;
+			&:nth-child(2)
+				transition 1s 0.5*1s;
+			&:nth-child(3)
+				transition 1s 0.5*2s;
+			&:nth-child(4)
+				transition 1s 0.5*3s;
+			&:nth-child(5)
+				transition 1s 0.5*4s;
+			&:nth-child(6)
+				transition 1s 0.5*5s;
 
 .section-page-5
+	&.fp-completely
+		.list
+			.col-xs-8
+				opacity 1
+				transform translateY(0)
 	.list
 		padding-top 50px
+		.col-xs-8
+			opacity 0
+			transform translateY(-100%)
+			&:nth-child(1)
+				transition 1s 0.5*0s;
+			&:nth-child(2)
+				transition 1s 0.5*1s;
+			&:nth-child(3)
+				transition 1s 0.5*2s;
 		.content
 			border 1px solid #eaeaea
 			img
@@ -443,20 +530,36 @@ a.more
 			text-overflow ellipsis
 			overflow hidden
 .section-page-6
+	&.fp-completely
+		.list
+			transform rotateZ(0)	
+			opacity 1
 	.list
 		margin-top 50px
 		border-top 1px solid #e8e8e8
 		border-left 1px solid #e8e8e8
 		overflow hidden
+		transform rotateZ(-200deg)
+		opacity 0
+		transition 0.5s
+		transform-origin left top
+		@media(max-width 768px)
+			margin-bottom 25px
 		a
 			float left
 			width 20%
 			box-sizing border-box
 			border-bottom 1px solid #e8e8e8
 			border-right 1px solid #e8e8e8
+			overflow hidden
+			&:hover
+				img
+					transform rotateZ(360deg)
 			@media(max-width 768px)
 				width 33.33%
 			img
+				transform rotateZ(0)
+				transition 0.5s
 				display block
 				width 100%
 .section-page-7
@@ -531,3 +634,7 @@ a.more
 		font-size 12px
 		color #939498
 		line-height 2
+
+.fp-section
+	@media(max-width 768px)
+		height auto!important
