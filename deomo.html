@@ -1,0 +1,47 @@
+<!doctype html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<title>CSS3选择3D正方形</title>  
+</head>  
+<style>  
+html,body,div,span,ul,li,ol,p,a{margin:0;padding:0;}  
+ul,li,ol{list-style:none;}  
+a{text-decoration:none;}  
+#container{margin:0 auto;width:500px; height:500px;border:1px #000 solid; background:#99F;position:relative;-webkit-perspective:10000;}  
+.cube{width:200px;height:200px;position:absolute;  -webkit-transform-style:preserve-3d; top:150px;left:150px;-webkit-transform:rotateX(10deg) rotateY(10deg) rotateZ(10deg);/*-webkit-animation:cube 30s linear 0s infinite alternate;*/}  
+.cube li{width:200px;height:200px;color:#fff;font-size:36px;line-height:200px;text-align:center;font-weight:700;position:absolute;-webkit-transform-style:preserve-3d;}  
+.cube li:nth-child(1){background:#09F;-webkit-transform-origin: top; -webkit-transform:rotateX(90deg);}  
+.cube li:nth-child(2){background:#990;-webkit-transform-origin: right; -webkit-transform:rotateY(90deg);}  
+.cube li:nth-child(3){background:#3CC;-webkit-transform-origin: bottom; -webkit-transform:rotateX(-90deg);}  
+.cube li:nth-child(4){background:#C6F;-webkit-transform-origin: left;-webkit-transform:rotateY(-90deg);}  
+.cube li:nth-child(5){background:#CC3;-webkit-transform-origin:center; -webkit-transform:translateZ(200px)}  
+.cube li:nth-child(6){background:#F60;-webkit-transform-origin:center;}  
+  
+@-webkit-keyframes cube{  
+0%{-webkit-transform:rotateY(10deg) rotateX(10deg) rotateZ(10deg);}  
+10%{-webkit-transform:rotateY(180deg)rotateX(10deg) rotateZ(10deg);}  
+25%{-webkit-transform:rotateY(360deg)rotateX(10deg) rotateZ(10deg);}  
+26%{-webkit-transform:rotateX(10deg) rotateY(10deg) rotateZ(10deg);}  
+40%{-webkit-transform:rotateX(180deg) rotateY(0deg) rotateZ(0deg);}  
+50%{-webkit-transform:rotateX(360deg) rotateY(0deg) rotateZ(0deg);}  
+51%{-webkit-transform:rotateZ(10deg) rotateY(10deg) rotateX(10deg);}  
+60%{-webkit-transform:rotateZ(180deg) rotateY(10deg) rotateX(10deg);}  
+75%{-webkit-transform:rotateZ(360deg) rotateY(10deg) rotateX(10deg);}  
+76%{-webkit-transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);}  
+100%{-webkit-transform:rotateX(10deg) rotateY(10deg) rotateZ(10deg);}  
+}  
+</style>  
+<body>  
+<div id="container">  
+    <ul class="cube">  
+        <li>1</li>  
+        <li>2</li>  
+        <li>3</li>  
+        <li>4</li>  
+        <li>5</li>  
+        <li>6</li>  
+    </ul>  
+</div>  
+</body>  
+</html>  

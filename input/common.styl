@@ -16,6 +16,7 @@
 				padding 0 10px
 	.bottom
 		background #fff
+		position relative
 		.brand
 			height 70px
 			font-size 0
@@ -34,6 +35,26 @@
 				img
 					display block
 					margin 0 auto
+			@media(max-width 768px)
+				margin 0
+				height 50px
+				text-align left
+				padding 0 15px
+				box-sizing border-box
+				img
+					display inline-block
+					height 36px
+		.toggle-menu
+			position absolute
+			right 15px
+			top 0
+			bottom 0
+			padding 15px
+			width 50px
+			background url(../img/menu.png) center center/50% auto no-repeat
+			box-sizing border-box
+			&.active
+				background-image url('../img/close.png')
 		.nav
 			height 70px
 			a
@@ -62,10 +83,84 @@
 					font-size:12px
 					line-height 40px
 			
+			@media(max-width 768px)
+				position absolute
+				top 50px
+				left 0
+				right 0
+				background #fff
+				display none
+				a
+					display block
+					width 100%
+					box-sizing border-box
+					margin 0
+					&:after
+						display none
+.public-title
+	h3
+		font-size 22px
+		color #444
+		line-height 1
+		text-align center
+		text-transform uppercase
+	.line
+		position relative
+		width 24px
+		height 24px
+		border-radius 50%
+		background #2087ed
+		margin 20px auto 30px
+		&:after
+			content ""
+			position absolute
+			left 50%
+			top 50%
+			width 60px
+			margin-left 30px
+			background #bbb
+			height 1px
+		&:before
+			content ""
+			position absolute
+			left 50%
+			top 50%
+			width 60px
+			margin-left -90px
+			background #bbb
+			height 1px
+	p
+		font-size 14px
+		color #444
+		text-align center
+		line-height 2
+		max-width 550px
+		width 80%
+		margin 0 auto
+			
 .pt-menu
 	padding-top 100px
 	height 100%
 	box-sizing border-box
+.pt-table
+	display table
+	table-layout fixed
+	width 100%
+.pt-table-cell
+	display table-cell
+	vertical-align middle
+	width 100%
+	height 100%
+a.more
+	display block
+	margin 25px auto 0
+	width 120px
+	height 40px
+	border 1px solid #2086ee
+	font-size 14px
+	color #2086ee
+	text-align center
+	line-height 40px
 .section-page-1
 	.banner
 		.pc-bg
@@ -119,3 +214,320 @@
 		background url('../img/header-banner10.png') center center /24px auto no-repeat
 	.fp-controlArrow.fp-next
 		background-image url('../img/header-banner9.png')
+
+.selection-page-2
+	.container
+		position relative
+	.swiper-container
+		padding 30px 0 60px
+		margin 0 50px
+	.ads
+		font-size 28px
+		color #fff
+		text-align center	
+		line-height 80px
+		background #39f
+	.perspective
+		perspective 1000px
+		&:hover
+			.wrap
+				transform rotateY(180deg)
+	.wrap
+		position relative
+		width 240px
+		height 370px
+		margin 0 auto
+		transform-style preserve-3d
+		transition 0.3s
+		.positive
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			padding 3px
+			background #f6f7f7
+		h4
+			font-size 20px
+			color #323434
+			padding-bottom 20px
+			text-align center
+			span
+				position relative
+				&:after
+					content ""
+					position absolute
+					left 30%
+					right 30%
+					bottom -20px
+					height 3px
+					background #323434
+		.icon
+			margin-top 40px
+			height 90px
+			background url() center center no-repeat
+		.positive
+			background #fff
+			border 1px solid #eaeaea
+			transform-style preserve-3d
+			.pic
+				img
+					display block
+					width 100%
+		.negative
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			background #39f
+			transform-style preserve-3d
+			transform-origin center
+			transform rotateY(180deg) translateZ(1px)
+			h4
+				color #fff
+				span
+					&:after
+						background #fff
+			p
+				padding-top 24px
+				color #fff
+				font-size 16px
+				line-height 1.5
+				width 200px
+				margin 0 auto
+				color #fff
+
+.section-page-3
+	background #f1f4f4
+	.control-btn
+		text-align center
+		a
+			position relative
+			display inline-block
+			max-width 180px
+			width 25%
+			font-size 16px
+			color #323232
+			line-height 40px
+			text-align center
+			transition 0.3s
+			background #fff
+			&:after
+				content ""
+				position absolute
+				bottom 0
+				left 50%
+				bottom -10px
+				margin-left -5px
+				border 5px solid transparent
+			&:hover
+			&.active
+				color #fff
+				background #2285eb
+				&:after
+					border-top-color #2285eb
+			@media(max-width 768px)
+				width 50%
+				float left
+				display block
+				max-width 10000px
+				&:after
+					display none
+					
+	.tabs-wrap
+		padding 20px 0
+		.wrap
+			background #fff
+			width 100%
+			border 1px solid #eaeaea
+			&:hover
+				box-shadow 0 0 5px #1e80e4
+			h3
+				padding 10px 0 0
+				font-size 22px
+				color #333
+				line-height 2
+				text-align center
+			.round
+				width 100px
+				height 100px
+				border 1px solid #e2e2e2
+				border-radius 50%
+				margin 0 auto
+				text-align center
+				font-size 30px
+				color #ff8726
+				line-height 100px
+				span
+					font-size 30px
+					color #eaeaea
+				i
+					font-size 16px
+					color #000
+			p
+				width 80%
+				margin 0 auto
+				font-size 12px
+				color #333
+				line-height 3
+				text-align center
+				border-bottom 1px solid #e6e5e5
+				&.bdbn
+					border-bottom none
+				a
+					color #1060ad
+				
+			.btn-group
+				width 80%
+				margin 10px auto 10px
+				a
+					width 48%
+					height 40px
+					line-height 40px
+					background #efefef
+					font-size 12px
+					color #666
+					text-align center
+					&:hover
+						color #fff
+						background #39f
+
+.section-page-4
+	background url('../img/good1.jpg') center center/cover no-repeat
+	.list
+		padding-top 60px
+		text-align center
+		img
+			display block
+			width 90px
+			height 102px
+			margin 0 auto
+		h3
+			font-size 16px
+			color #000
+			padding 20px 0 30px
+			white-space nowrap
+			text-overflow ellipsis
+			overflow hidden
+			width 100%
+
+.section-page-5
+	.list
+		padding-top 50px
+		.content
+			border 1px solid #eaeaea
+			img
+				display block
+				width 100%
+			h3
+				padding 0 20px
+				width 100%
+				box-sizing border-box
+				font-size 16px
+				color #444
+				line-height 3
+				white-space nowrap
+				text-overflow ellipsis
+				overflow hidden
+				width 100%
+	.list2
+		padding-top 15px
+		font-size 16px
+		color #444
+		line-height 1
+		a
+			margin 10px 0 10px 10px
+			display block
+			white-space nowrap
+			text-overflow ellipsis
+			overflow hidden
+.section-page-6
+	.list
+		margin-top 50px
+		border-top 1px solid #e8e8e8
+		border-left 1px solid #e8e8e8
+		overflow hidden
+		a
+			float left
+			width 20%
+			box-sizing border-box
+			border-bottom 1px solid #e8e8e8
+			border-right 1px solid #e8e8e8
+			@media(max-width 768px)
+				width 33.33%
+			img
+				display block
+				width 100%
+.section-page-7
+	background #373d41
+	.nav
+		font-size 14px
+		color #fff
+		line-height 70px
+		border-bottom 1px solid #5d5e63
+		@media(max-width 768px)
+			height auto
+			padding 15px 0	
+			line-height 30px
+		a
+			display inline-block
+			margin 0 5px
+	.col-menu
+		h3
+			padding 20px 0 10px
+			font-size 16px
+			color #b2b2b3
+		a
+			font-size 12px
+			color #f0f0ee
+			line-height 2.5
+	.qrcode
+		padding-top 5px
+		width 120px
+		max-width 80%
+		background #fff
+		margin 50px auto 0
+		img
+			display block
+			margin 0 auto
+		.text
+			font-size 14px
+			color #4b4a50
+			line-height 2
+			text-align center
+	.tel-number
+		padding-top 50px
+		font-size 18px
+		color #fff
+		line-height 2
+		.tel
+			font-size 28px
+			line-height 1.2
+		.time
+			font-size 14px
+	.menu
+		a
+			float left
+			width 33.33%
+			text-align center
+		.icon
+			width 100%
+			height 40px
+			display block
+			background url() center center no-repeat
+		.text
+			display block
+			font-size 12px
+			color #fff
+			line-height 1
+			padding-top 5px
+	.line
+		margin 10px 0
+		border-bottom 1px solid #5d5e63
+	.copy-right
+		padding 20px 0
+		text-align center
+		font-size 12px
+		color #939498
+		line-height 2
